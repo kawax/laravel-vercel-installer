@@ -17,22 +17,8 @@ composer require revolution/laravel-vercel-installer --dev
 php artisan vercel:install
 ```
 
-## TrustProxies.php
-If you have any problems with TrustProxies, change $proxies.
-
-```php
-class TrustProxies extends Middleware
-{
-    /**
-     * The trusted proxies for this application.
-     *
-     * @var array<int, string>|string|null
-     */
-    protected $proxies = '*';
-
-```
-
 ## vercel.json
+It will probably not work with the new spec that uses `functions` and `rewrites` in vercel.json.
 
 ### regions
 https://vercel.com/docs/concepts/edge-network/regions
@@ -55,6 +41,34 @@ If there are other files in public, add them to routes.
 
 ### env
 Secret env is set in the vercel settings page.
+
+## TrustProxies.php
+If you have any problems with TrustProxies, change $proxies.
+
+```php
+class TrustProxies extends Middleware
+{
+    /**
+     * The trusted proxies for this application.
+     *
+     * @var array<int, string>|string|null
+     */
+    protected $proxies = '*';
+
+```
+
+## Livewire
+To use livewire, you must publish a config file
+
+```shell
+php artisan livewire:publish --config
+```
+
+Change `manifest_path` in config/livewire.php.
+
+```php
+    'manifest_path' => env('LIVEWIRE_MANIFEST_PATH'),
+```
 
 ## LICENSE
 MIT  

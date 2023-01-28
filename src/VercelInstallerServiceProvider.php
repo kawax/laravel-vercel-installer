@@ -9,7 +9,7 @@ use Revolution\Vercel\Console\InstallCommand;
 
 class VercelInstallerServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->commands([

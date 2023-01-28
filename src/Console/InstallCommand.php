@@ -26,16 +26,17 @@ class InstallCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
+     * @return int
      */
-    public function handle(): void
+    public function handle(): int
     {
-        // Vercel
         File::ensureDirectoryExists(base_path('api'));
         File::copyDirectory(__DIR__.'/../../stubs/api/', base_path('api'));
         File::copy(__DIR__.'/../../stubs/.vercelignore', base_path('.vercelignore'));
         File::copy(__DIR__.'/../../stubs/vercel.json', base_path('vercel.json'));
 
         $this->info('Vercel resources installed successfully.');
+
+        return Command::SUCCESS;
     }
 }

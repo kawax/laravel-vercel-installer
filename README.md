@@ -24,7 +24,7 @@ It will probably not work with the new spec that uses `functions` and `rewrites`
 https://vercel.com/docs/concepts/edge-network/regions
 
 ### builds
-`vercel-php@0.5.2` is PHP8.1
+`vercel-php@0.6.0` is PHP8.2
 
 To use another version, check this repository.
 https://github.com/vercel-community/php

@@ -42,8 +42,10 @@ If there are other files in public, add them to routes.
 ### env
 Secret env is set in the vercel settings page.
 
-## TrustProxies.php
-If you have any problems with TrustProxies, change $proxies.
+## TrustProxies
+
+### Laravel 10
+If you have any problems with TrustProxies, change `/app/Http/Middleware/TrustProxies.php`.
 
 ```php
 class TrustProxies extends Middleware
@@ -57,17 +59,12 @@ class TrustProxies extends Middleware
 
 ```
 
-## Livewire
-To use livewire, you must publish a config file
-
-```shell
-php artisan livewire:publish --config
-```
-
-Change `manifest_path` in config/livewire.php.
-
+### Laravel 11
+Change `/bootstrap/app.php`
 ```php
-    'manifest_path' => env('LIVEWIRE_MANIFEST_PATH'),
+->withMiddleware(function (Middleware $middleware) {
+        $middleware->trustProxies('*');
+    })
 ```
 
 ## LICENSE

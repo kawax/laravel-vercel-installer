@@ -37,6 +37,6 @@ class InstallCommand extends Command
 
         $this->info('Vercel resources installed successfully.');
 
-        return Command::SUCCESS;
+        return 0;
     }
 }

@@ -6,8 +6,8 @@
 Install some files to run Laravel on Vercel.
 
 ## Requirements
-- PHP >= 8.1
-- Laravel >= 9.0
+- PHP >= 8.2
+- Laravel >= 10.0
 
 ## Installation
 
@@ -24,7 +24,7 @@ It will probably not work with the new spec that uses `functions` and `rewrites`
 https://vercel.com/docs/concepts/edge-network/regions
 
 ### builds
-`vercel-php@0.6.0` is PHP8.2
+`vercel-php@0.7.0` is PHP8.3
 
 To use another version, check this repository.
 https://github.com/vercel-community/php
@@ -63,7 +63,7 @@ class TrustProxies extends Middleware
 Change `/bootstrap/app.php`
 ```php
 ->withMiddleware(function (Middleware $middleware) {
-        $middleware->trustProxies('*');
+        $middleware->trustProxies(at: '*');
     })
 ```
 

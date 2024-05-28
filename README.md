@@ -42,6 +42,8 @@ If there are other files in public, add them to routes.
 ### env
 Secret env is set in the vercel settings page.
 
+`php artisan key:generate --show` command generates a new key without updating the .env file. Set this key on the Settings page `APP_KEY`.
+
 ## TrustProxies
 
 ### Laravel 10

@@ -31,7 +31,7 @@ class InstallCommand extends Command
     public function handle(): int
     {
         File::ensureDirectoryExists(base_path('api'));
-        File::copyDirectory(__DIR__.'/../../stubs/api/', base_path('api'));
+        File::copy(__DIR__.'/../../stubs/api/index.php', base_path('api/index.php'));
         File::copy(__DIR__.'/../../stubs/.vercelignore', base_path('.vercelignore'));
         File::copy(__DIR__.'/../../stubs/vercel.json', base_path('vercel.json'));
 

@@ -24,9 +24,9 @@ class InstallTest extends TestCase
 
     public function tearDown(): void
     {
-        parent::tearDown();
-
         File::deleteDirectory($this->path);
+
+        parent::tearDown();
     }
 
     /**

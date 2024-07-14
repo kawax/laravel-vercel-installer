@@ -17,6 +17,11 @@ composer require revolution/laravel-vercel-installer --dev
 php artisan vercel:install
 ```
 
+### Uninstall
+```shell
+composer remove revolution/laravel-vercel-installer --dev
+```
+
 ## vercel.json
 It will probably not work with the new spec that uses `functions` and `rewrites` in vercel.json.
 

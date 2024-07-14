@@ -21,10 +21,10 @@ php artisan vercel:install
 It will probably not work with the new spec that uses `functions` and `rewrites` in vercel.json.
 
 ### regions
-https://vercel.com/docs/concepts/edge-network/regions
+https://vercel.com/docs/edge-network/regions
 
 ### builds
-`vercel-php@0.7.0` is PHP8.3
+`vercel-php@0.7.1` is PHP8.3
 
 To use another version, check this repository.
 https://github.com/vercel-community/php
@@ -43,6 +43,16 @@ If there are other files in public, add them to routes.
 Secret env is set in the vercel settings page.
 
 `php artisan key:generate --show` command generates a new key without updating the .env file. Set this key on the Settings page `APP_KEY`.
+
+## Database
+You can use Vercel Postgres or AWS RDS.
+
+https://vercel.com/docs/storage/vercel-postgres
+
+## Cache and session
+You can't use the `file` driver.
+
+If you're using a database, you can use the `database` driver.
 
 ## TrustProxies
 

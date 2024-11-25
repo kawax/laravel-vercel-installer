@@ -103,5 +103,13 @@ return Application::configure(basePath: dirname(__DIR__))
     )
 ```
 
+## Disable build cache
+
+Deployment often fails when you increase the package version in composer.json. To solve this, add `VERCEL_FORCE_NO_BUILD_CACHE` to Vercel's project settings - `Environment Variables`.　Setting it in `vercel.json` probably won't solve the problem.
+
+- `VERCEL_FORCE_NO_BUILD_CACHE` : `1`
+
+https://vercel.com/docs/deployments/troubleshoot-a-build#managing-build-cache
+
 ## LICENSE
 MIT  

@@ -7,7 +7,7 @@ Install some files to run Laravel on Vercel.
 
 ## Requirements
 - PHP >= 8.2
-- Laravel >= 10.0
+- Laravel >= 11.0
 
 ## Installation
 
@@ -29,7 +29,7 @@ It will probably not work with the new spec that uses `functions` and `rewrites`
 https://vercel.com/docs/edge-network/regions
 
 ### builds
-`vercel-php@0.7.2` is PHP8.3
+`vercel-php@0.7.3` is PHP8.3
 
 To use another version, check this repository.
 https://github.com/vercel-community/php
